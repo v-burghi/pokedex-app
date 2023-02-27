@@ -1,0 +1,68 @@
+<div class="wrapping-dex-div">
+    <p-table [value]="pokemonList" [paginator]="true" [rows]="20" [showJumpToPageDropdown]="true" [scrollable]="true" scrollHeight="1000px"
+        [currentPageReportTemplate]="'{currentPage} de {totalPages}'">
+        <ng-template pTemplate="header" let-pokemon>
+            <tr class="display-flex align-center">
+                <th>Imagem</th>
+                <th pSortableColumn="name">Nome <p-sortIcon field="name"></p-sortIcon>
+                </th>
+                <th pSortableColumn="national_number">Registro Nacional <p-sortIcon field="national_number">
+                    </p-sortIcon>
+                </th>
+                <th>Tipo(s)</th>
+                <th>Favorito</th>
+            </tr>
+            <tr class="display-flex align-center">
+                <th></th>
+                <th>
+                    <p-columnFilter field="name" matchMode="contains" [showMenu]="false" [showButtons]="false"
+                        [showClearButton]="false">
+                        <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                            <input type="text" pInputText [ngModel]="value" (ngModelChange)="filter($event)"
+                                class="p-inputtext" placeholder="Nome">
+                        </ng-template>
+                    </p-columnFilter>
+                </th>
+                <th>
+                    <p-columnFilter field="national_number" matchMode="contains" [showMenu]="false"
+                        [showButtons]="false" [showClearButton]="false">
+                        <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                            <p-inputNumber [ngModel]="value" (ngModelChange)="filter($event)"
+                                placeholder="Registro Nacional">
+                            </p-inputNumber>
+                        </ng-template>
+                    </p-columnFilter>
+                </th>
+                <th>
+                    <p-columnFilter field="type" matchMode="contains" [showMenu]="false" [showClearButton]="false">
+                        <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                            <p-multiSelect [ngModel]="value" [options]="types" optionLabel="name" optionValue="value"
+                                display="chip" [selectionLimit]="2" (onChange)="filter($event.value)"
+                                placeholder="Selecione um tipo" [showClear]="false">
+                            </p-multiSelect>
+                        </ng-template>
+                    </p-columnFilter>
+                </th>
+                <th>
+                    <p-columnFilter type="boolean" field="isFavorite" matchMode="equals" [showMenu]="false"
+                        [showButtons]="false" [showClearButton]="false"></p-columnFilter>
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-pokemon>
+            <tr class="display-flex align-center">
+                <td><img src="{{pokemon.sprites.normal}}" alt="{{pokemon.name}}"></td>
+                <td>{{pokemon.name}} <span *ngIf="pokemon.evolution"> - {{pokemon.evolution.name}}</span> </td>
+                <td>{{pokemon.national_number}}</td>
+                <td>
+                    <span *ngFor="let type of pokemon.type; let last = last">{{type}}<span *ngIf="!last">,
+                        </span></span>
+                </td>
+                <td>
+                    <p-checkbox [(ngModel)]="pokemon.isFavorite" [binary]="true" checkboxIcon="pi pi-heart">
+                    </p-checkbox>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
