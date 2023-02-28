@@ -1,0 +1,58 @@
+<div class="wrapping-dex-div">
+    <table>
+        <tr>
+            <th>Imagem</th>
+            <th>Nome</th>
+            <th>Registro Nacional</th>
+            <th>Tipo(s)</th>
+            <th>Favoritos</th>
+        </tr>
+        <tr>
+            <th></th>
+            <th>
+                <input type="text" name="nameFilter" id="nameFilter" placeholder="Nome" #nameFilter (input)="filter(nameFilter.value, 'name')">
+                <select class="sortDropdown" name="nameSort" id="nameSort" #nameSort (change)="sort(nameSort.value,'name')">
+                    <option value="">Ordenar</option>
+                    <option value="asc">Ascendente</option>
+                    <option value="desc">Descendente</option>
+                </select>
+            </th>
+            <th>
+                <input type="text" name="numberFilter" id="numberFilter" placeholder="Registro Nacional" #numberFilter (input)="filter(numberFilter.value, 'national_number')">
+                <select class="sortDropdown" name="numberSort" id="numberSort" #numberSort (change)="sort(numberSort.value,'national_number')">
+                    <option value="">Ordenar</option>
+                    <option value="asc">Ascendente</option>
+                    <option value="desc">Descendente</option>
+                </select>
+            </th>
+            <th>
+                <select name="typeFilter" id="typeFilter" #typeFilter (change)="filter(typeFilter.value, 'type')">
+                    <option value="">Selecione um tipo</option>
+                    <option value="{{type.value}}" *ngFor="let type of availableTypes">
+                        <span>
+                            <input type="checkbox" name="type" id="type">
+                        </span>
+                        {{type.name}}
+                    </option>
+                            
+                </select>
+            </th>
+            <th>
+                <input type="checkbox" name="favoriteFilter" id="favoriteFilter" (change)="filterFavorite($event)">
+            </th>
+        </tr>
+        <tr *ngFor="let pokemon of pokemonList">
+            <td><img src="{{pokemon.sprites.normal}}" alt="{{pokemon.name}}"></td>
+            <td>{{pokemon.name}} <span *ngIf="pokemon.evolution"> - {{pokemon.evolution.name}}</span> </td>
+            <td>{{pokemon.national_number}}</td>
+            <td>
+                <span *ngFor="let type of pokemon.type; let last = last">{{type}}<span *ngIf="!last">,
+                    </span></span>
+            </td>
+            <td class="favorite">
+                <fa-icon size="2x" [icon]="faHeart" *ngIf="pokemon.isFavorite" (click)="pokemon.isFavorite = false" style="color: red;"></fa-icon>
+                <fa-icon size="2x" class="hide" [icon]="faHeart" *ngIf="!pokemon.isFavorite" (click)="pokemon.isFavorite = true" ></fa-icon>
+            </td>
+        </tr>
+    </table>
+</div>

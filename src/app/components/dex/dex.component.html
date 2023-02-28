@@ -36,7 +36,7 @@
                 <th>
                     <p-columnFilter field="type" matchMode="contains" [showMenu]="false" [showClearButton]="false">
                         <ng-template pTemplate="filter" let-value let-filter="filterCallback">
-                            <p-multiSelect [ngModel]="value" [options]="types" optionLabel="name" optionValue="value"
+                            <p-multiSelect [ngModel]="value" [options]="availableTypes" optionLabel="name" optionValue="value"
                                 display="chip" [selectionLimit]="2" (onChange)="filter($event.value)"
                                 placeholder="Selecione um tipo" [showClear]="false">
                             </p-multiSelect>

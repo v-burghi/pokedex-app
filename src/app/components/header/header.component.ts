@@ -6,24 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  
-  items = [
-    {label: 'Update', icon: 'pi pi-refresh', command: () => {this.update();}},
-    {label: 'Delete', icon: 'pi pi-times', command: () => {this.delete();}},
-    {label: 'Angular.io', icon: 'pi pi-info', url: 'http://angular.io'},
-    {separator: true},
-    {label: 'Setup', icon: 'pi pi-cog', routerLink: ['/setup']}
-    
-];
 
   constructor ( ) { }
-
-  update() {
-    console.log('update');
-  }
-  
-  delete() {
-    console.log('delete');
-  }
 
 }

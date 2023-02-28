@@ -10,12 +10,14 @@ import { PrimengModule } from './common/primeng.module';
 import { FontawesomeModule } from './common/fontawesome.module';
 import { DexComponent } from './components/dex/dex.component';
 import { HeaderComponent } from './components/header/header.component';
+import { NoPrimeDexComponent } from './components/no-prime-dex/no-prime-dex.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DexComponent,
-    HeaderComponent
+    HeaderComponent,
+    NoPrimeDexComponent
   ],
   imports: [
     BrowserModule,

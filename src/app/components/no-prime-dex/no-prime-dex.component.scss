@@ -1,0 +1,98 @@
+.wrapping-dex-div {
+    padding: 2rem 5rem;
+}
+
+input:not([type=checkbox]), select, option {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 1rem;
+    color: #495057;
+    background: #ffffff;
+    padding: 0.75rem 0.75rem;
+    border: 1px solid #ced4da;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 6px;
+}
+
+input[type=checkbox] {
+    width: 25px;
+    height: 25px;
+    padding: 0.75rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+select {
+    width: 100%;
+}
+
+.sortDropdown{
+    width: 25%;
+    margin-left: 1%;
+}
+
+input:enabled:hover {
+    border-color: #3b82f6;
+}
+
+input:enabled:focus {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: 0 0 0 0.2rem #bfdbfe;
+    border-color: #3B82F6;
+}
+
+.favorite:hover > .hide {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+table {
+    text-align: center;
+    padding: 0;
+    width: 100%;
+    border-spacing: 0;
+}
+
+th {
+    padding: 1rem 1rem;
+    border: 1px solid #dee2e6;
+    border-width: 0 0 1px 0;
+    font-weight: 700;
+    color: #343a40;
+    background: #f8f9fa;
+    transition: box-shadow 0.2s;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 1rem;
+}
+
+td {
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    border-color: #dee2e6;
+}
+
+.wrapping-dex-div {
+    padding: 2rem 5rem;
+}
+
+::-webkit-scrollbar {
+    width: 12px !important;
+}
+ 
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3) !important; 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) !important; 
+    border-radius: 10px !important;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px !important;
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.5) !important; 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5) !important; 
+}

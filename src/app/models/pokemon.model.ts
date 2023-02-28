@@ -1,6 +1,6 @@
 export interface Pokemon {
     
-    national_number: number,
+    national_number: string,
     evolution: Evolution,
     sprites: Sprites,
     name: string,
