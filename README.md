@@ -7,3 +7,7 @@ localhost:4200
 
 
 a versão 'Deployada' encontra-se no endereço : https://v-burghi.github.io/pokedex-app/
+
+
+
+como não foi fornecido para mim um arquivo de layout, mesmo que no documento que eu recebi, houvesse uma indicação que existia um, fiz um layout simples. caso esse arquivo de layout seja fornecido, posso atualizar o teste.
