@@ -41,13 +41,13 @@ export class NoPrimeDexComponent implements OnInit {
         pokemon.isFavorite = false;
       })
       this.unfilteredPokemonList = this.pokemonList
-      console.log(this.pokemonList)
+      console.log(response)
     })
   }
 
   filterFavorite (event:any) {
     if (event.target.checked) {
-      this.pokemonList = this.pokemonList.filter(pokemon => pokemon.isFavorite)
+      this.pokemonList = this.unfilteredPokemonList.filter(pokemon => pokemon.isFavorite)
     } else {
       this.pokemonList = this.unfilteredPokemonList
     }

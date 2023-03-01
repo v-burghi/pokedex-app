@@ -16,14 +16,6 @@ import { types } from 'src/app/common/types';
 })
 export class DexComponent implements OnInit {
 
-  cols: any[] = [
-    { field: 'sprites.normal', header: 'Imagem' },
-    { field: 'name', header: 'Nome' },
-    { field: 'national_number', header: 'Registro Nacional' },
-    { field: 'type', header: 'Tipo(s)' },
-    { field: 'isFavorite', header: 'Favorito'}
-  ];
-
   results: Results = {results:[]};
   pokemonList: Pokemon[] = []
   availableTypes: any[] = types
@@ -34,18 +26,17 @@ export class DexComponent implements OnInit {
     faHeart = faHeart
     
     ngOnInit() {
+      this.getPokemonList()
+    }  
+
+    getPokemonList() {
       this.dexService.getPokemonList().subscribe(response => {
         this.results = response;
         this.pokemonList = this.results.results;
         this.pokemonList.forEach(pokemon => {
           pokemon.isFavorite = false;
         })
-        // console.log(this.pokemonList)
       })
-    }  
-
-    changeFavorite(event:any) {
-      console.log(event)
     }
 
 }

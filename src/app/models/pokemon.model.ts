@@ -1,7 +1,7 @@
 export interface Pokemon {
     
     national_number: string,
-    evolution: Evolution,
+    evolution: Evolution | null,
     sprites: Sprites,
     name: string,
     type: string[],
@@ -12,7 +12,7 @@ export interface Pokemon {
     sp_atk: number,
     sp_def: number,
     speed: number,
-    isFavorite:boolean
+    isFavorite?:boolean
 }
 
 export interface Sprites {
